@@ -1,41 +1,31 @@
-import java.util.Arrays;
-
+package Metodos;
 
 public class GnomeSort {
 
-    static void gnomeSort(int arr[], int n) {
-        long startTime = System.nanoTime(); // Registro del tiempo de inicio
+    /**
+     * Este método implementa el algoritmo Gnome Sort para ordenar un arreglo.
+     * @param arr Arreglo de enteros a ordenar
+     * @param n Tamaño del arreglo
+     */
+    public static void gnomeSort(int arr[], int n) {
+        int index = 0; // Inicializa el índice de posición en el arreglo
 
-        int index = 0;
+        // Mientras el índice sea menor que el tamaño del arreglo
         while (index < n) {
-            if (index == 0)
+            if (index == 0) // Si el índice es 0, incrementa para avanzar al siguiente elemento
                 index++;
+            // Si el elemento actual es mayor o igual al anterior, avanza al siguiente elemento
             if (arr[index] >= arr[index - 1])
                 index++;
             else {
+                // Si el elemento actual es menor que el anterior, intercámbialos
                 int temp = arr[index];
                 arr[index] = arr[index - 1];
                 arr[index - 1] = temp;
-                index--;
+                index--; // Retrocede para revisar el elemento anterior
             }
         }
-
-        long endTime = System.nanoTime(); // Registro del tiempo de finalización
-        long totalTime = endTime - startTime; // Calculo del tiempo total en milisegundos
-        System.out.println("\nTiempo de ejecución en nanosegundos: " + totalTime);
-    }
-
-    public static void main(String[] args) {
-        int arr[] = {12345678, 80764578, 18076577, 87657878, 78330487};
-
-        System.out.println("El arreglo original es:");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-
-        gnomeSort(arr, arr.length);
-
-        System.out.print("\nArreglo ordenado después de aplicar el método de ordenamiento GnomeSort:");
-        System.out.println(Arrays.toString(arr));
     }
 }
+
+

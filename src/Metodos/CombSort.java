@@ -1,7 +1,12 @@
-public class CombSort {
+package Metodos;
 
-    // Método para obtener el siguiente espacio entre elementos
-    int getNextGap(int gap) {
+public class CombSort {
+    /**
+     * Método para obtener el siguiente espacio entre elementos.
+     * @param gap Espacio actual entre elementos
+     * @return Siguiente espacio entre elementos
+     */
+    public int getNextGap(int gap) {
         // Reducir el espacio por el factor de reducción
         gap = (gap * 10) / 13;
         if (gap < 1)
@@ -9,8 +14,11 @@ public class CombSort {
         return gap;
     }
 
-    // Función para ordenar arr[] usando Comb Sort
-    void sort(int arr[]) {
+    /**
+     * Función para ordenar un arreglo usando Comb Sort.
+     * @param arr Arreglo a ordenar
+     */
+    public void sort(int arr[]) {
         int n = arr.length;
 
         // Inicializar el espacio
@@ -41,31 +49,5 @@ public class CombSort {
             }
         }
     }
-
-    // Método principal
-    public static void main(String args[]) {
-        CombSort ob = new CombSort();
-        int arr[] = {12345678, 80764578, 18076577, 87657878, 78330487};
-
-        System.out.println("Arreglo original:");
-        for (int i = 0; i < arr.length; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-
-        // Medir el tiempo de ejecución de CombSort
-        long startTime = System.nanoTime(); // Tiempo de inicio en nanosegundos
-
-        ob.sort(arr);
-
-        long endTime = System.nanoTime(); // Tiempo de finalización en nanosegundos
-        long duration = endTime - startTime; // Duración en nanosegundos
-        System.out.println("Tiempo de ejecución de CombSort: " + duration + " nanosegundos");
-
-        System.out.println("Arreglo ordenado:");
-        for (int i = 0; i < arr.length; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-
-    /* Este código es proporcionado por Rajat Mishra */
 }
+

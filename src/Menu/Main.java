@@ -1,43 +1,49 @@
-package Metodos;
+package Menu;
 
-import java.util.Random;
+import Metodos.*;
+import Radix.*;
 
 public class Main {
+
     public static void main(String[] args) {
 
-        //int[] arr = generarArreglo();
-        int[] arr = {12345678, 80764578, 18076577, 87657878, 78330487};
+        int[] arr = Arreglo.generarArreglo(10_000);
+        //int[] arr = {12345678, 80764578, 18076577, 87657878, 78330487};
         int n = arr.length;
 
-        // Ordenamiento utilizando TimSort
-        executeTimSort(arr, n);
-
-        // Ordenamiento utilizando CombSort
-        executeCombSort(arr);
-
-        // Ordenamiento utilizando TreeSort
-        executeTreeSort(arr, n);
-
-        // Ordenamiento utilizando Pigeonhole Sort
-        executePigeonholeSort(arr, n);
-
-        // Ordenamiento utilizando HeapSort
-        executeHeapSort(arr);
-
-        // Ordenamiento utilizando BitonicSort
-        executeBitonicSort(arr, n);
-
-        // Ordenamiento utilizando GnomeSort
-        executeGnomeSort(arr, n);
+        executeTimSort(arr, n); // Ordenamiento utilizando TimSort
+        executeCombSort(arr); // Ordenamiento utilizando CombSort
+        executeTreeSort(arr, n); // Ordenamiento utilizando TreeSort
+        executePigeonholeSort(arr, n); // Ordenamiento utilizando Pigeonhole Sort
+        executeHeapSort(arr); // Ordenamiento utilizando HeapSort
+        executeBitonicSort(arr, n); // Ordenamiento utilizando BitonicSort
+        executeGnomeSort(arr, n); // Ordenamiento utilizando GnomeSort
+        // ************************
+        executeRadixSort(arr, n); // Llamar al método para ejecutar Radix Sort
+        executeRadixSortClassroom(arr, n);
 
     }
 
-    // Método para imprimir un arreglo
-    public static void printArray(int[] arr, int n) {
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
+    public static void executeRadixSortClassroom(int[] arr, int n) {
+        RadixSortClassroom.RadixSortClass radixSort = new RadixSortClassroom.RadixSortClass();
+        long startTime = System.nanoTime();
+        radixSort.sort(arr);
+        long endTime = System.nanoTime();
+
+        System.out.println("Tiempo de ejecución de Radix Sort desde RadixSortClassroom: " + (endTime - startTime) + " nanosegundos");
+    }
+
+    // Método para ejecutar Radix Sort y medir su tiempo de ejecución
+    public static void executeRadixSort(int[] arr, int n) {
+        RadixSort1 radixSort = new RadixSort1();
+        long startTime = System.nanoTime();
+        radixSort.radixsort(arr, n);
+        long endTime = System.nanoTime();
+
+        // Mostrar el arreglo ordenado y el tiempo de ejecución
+        //System.out.println("El arreglo ordenado por Radix Sort es:");
+        //RadixSort1.print(arr, n);
+        System.out.println("\nTiempo de ejecución de Radix Sort: " + (endTime - startTime) + " nanosegundos");
     }
 
     // Método para ejecutar TimSort
@@ -49,7 +55,7 @@ public class Main {
 
         // Mostrar el arreglo ordenado y el tiempo de ejecución
         // System.out.println("El arreglo ordenado por TimSort es:");
-        //printArray(arr, n);
+        // printArray(arr, n);
         System.out.println("Tiempo de ejecución de TimSort: " + (endTime - startTime) + " nanosegundos");
     }
 
@@ -132,6 +138,14 @@ public class Main {
         //printArray(arr, n);
         System.out.println("Tiempo de ejecución de GnomeSort: " + (endTime - startTime) + " nanosegundos");
     }
+    // Método para imprimir un arreglo
+    public static void printArray(int[] arr, int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
 }
 
 

@@ -1,10 +1,13 @@
+package Metodos;
+
 public class TreeSort {
 
     // Clase que contiene el hijo izquierdo y derecho del nodo actual y el valor clave
-    class Node {
+    private static class Node {
         int key;
         Node left, right;
 
+        // Constructor para inicializar un nodo con una clave dada
         public Node(int item) {
             key = item;
             left = right = null;
@@ -12,25 +15,52 @@ public class TreeSort {
     }
 
     // Raíz del BST
-    Node root;
+    private Node root;
 
-    // Constructor
-    TreeSort() {
-        root = null;
+    // Constructor de la clase TreeSort
+    public TreeSort() {
+        root = null; // Inicializa la raíz como nula al crear un nuevo objeto TreeSort
     }
 
-    // Este método llama principalmente a insertRec()
-    void insert(int key) {
-        root = insertRec(root, key);
+    // Método público para insertar una clave en el árbol
+    public void insert(int key) {
+        Node newNode = new Node(key); // Crea un nuevo nodo con la clave a insertar
+
+        if (root == null) {
+            root = newNode; // Si el árbol está vacío, el nuevo nodo se convierte en la raíz
+            return;
+        }
+
+        Node current = root;
+        Node parent = null;
+
+        while (true) {
+            parent = current;
+            if (key < current.key) {
+                current = current.left;
+                if (current == null) {
+                    parent.left = newNode;
+                    return;
+                }
+            } else {
+                current = current.right;
+                if (current == null) {
+                    parent.right = newNode;
+                    return;
+                }
+            }
+        }
     }
+
 
     // Función recursiva para insertar una nueva clave en el BST
-    Node insertRec(Node root, int key) {
+    private Node insertRec(Node root, int key) {
         if (root == null) {
-            root = new Node(key);
+            root = new Node(key); // Crea un nuevo nodo si el árbol está vacío
             return root;
         }
 
+        // Inserta la clave en el subárbol izquierdo o derecho según corresponda
         if (key < root.key)
             root.left = insertRec(root.left, key);
         else if (key > root.key)
@@ -39,40 +69,18 @@ public class TreeSort {
         return root;
     }
 
-    // Función para realizar un recorrido inorder del BST
-    void inorderRec(Node root) {
+    // Método público para realizar un recorrido inorder del BST (ordenado)
+    public void inorder() {
+        inorderRec(root); // Llama a la función privada inorderRec para realizar el recorrido inorder
+    }
+
+    // Función privada para realizar un recorrido inorder del BST recursivamente
+    private void inorderRec(Node root) {
         if (root != null) {
-            inorderRec(root.left);
-            System.out.print(root.key + " ");
-            inorderRec(root.right);
+            inorderRec(root.left); // Recorre el subárbol izquierdo
+            System.out.print(root.key + " "); // Imprime el valor clave del nodo actual
+            inorderRec(root.right); // Recorre el subárbol derecho
         }
-    }
-
-    // Método para insertar elementos del arreglo en el árbol
-    void treeins(int arr[]) {
-        for (int i = 0; i < arr.length; i++) {
-            insert(arr[i]);
-        }
-    }
-
-    public static void main(String[] args) {
-        TreeSort tree = new TreeSort();
-        int arr[] = {12345678, 80764578, 18076577, 87657878, 78330487};
-
-        System.out.println("Arreglo original: ");
-        for (int i = 0; i < arr.length; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-
-        // Medir el tiempo de ejecución de TreeSort
-        long startTime = System.nanoTime(); // Tiempo de inicio en nanosegundos
-
-        tree.treeins(arr);
-        tree.inorderRec(tree.root);
-
-        long endTime = System.nanoTime(); // Tiempo de finalización en nanosegundos
-        long duration = endTime - startTime; // Duración en nanosegundos
-        System.out.println("\nTiempo de ejecución de TreeSort: " + duration + " nanosegundos");
     }
 }
 

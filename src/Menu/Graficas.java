@@ -1,4 +1,6 @@
-package Metodos;
+package Menu;
+import Metodos.*;
+import Radix.*;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -9,11 +11,12 @@ import java.awt.*;
 
 public class Graficas {
     public static void main(String[] args) {
-        int[] arr = {12345678, 80764578, 18076577, 87657878, 78330487};
+        int[] arr = Arreglo.generarArreglo(200_000);
+        //int[] arr = {12345678, 80764578, 18076577, 87657878, 78330487};
         int n = arr.length;
 
         // Crear un array para almacenar los tiempos de ejecución
-        long[] tiempos = new long[7]; // 7 algoritmos de ordenamiento
+        long[] tiempos = new long[9]; // 7 algoritmos de ordenamiento
 
         // Crear una instancia de TimSort
         TimSort timSort = new TimSort();
@@ -66,6 +69,21 @@ public class Graficas {
         long endTime7 = System.nanoTime();
         tiempos[6] = endTime7 - startTime7;
 
+        // Crear una instancia de RadixSort
+        RadixSort1 radixSort1 = new RadixSort1();
+        long startTime8 = System.nanoTime();
+        radixSort1.radixsort(arr, n);
+        long endTime8 = System.nanoTime();
+        tiempos[7] = endTime8 - startTime8;
+
+        // Crear una instancia de RadixSort
+        RadixSortClassroom.RadixSortClass radixSort = new RadixSortClassroom.RadixSortClass();
+        long startTime9 = System.nanoTime();
+        radixSort.sort(arr);
+        long endTime9 = System.nanoTime();
+        tiempos[8] = endTime9 - startTime9;
+
+
         // Crear el dataset para la gráfica
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         dataset.addValue(tiempos[0], "Tiempo (ns)", "TimSort");
@@ -75,6 +93,8 @@ public class Graficas {
         dataset.addValue(tiempos[4], "Tiempo (ns)", "HeapSort");
         dataset.addValue(tiempos[5], "Tiempo (ns)", "BitonicSort");
         dataset.addValue(tiempos[6], "Tiempo (ns)", "GnomeSort");
+        dataset.addValue(tiempos[7], "Tiempo (ns)", "RadixSort");
+        dataset.addValue(tiempos[8], "Tiempo (ns)", "RadixSort-Classroom");
 
         // Crear la gráfica de barras
         JFreeChart chart = ChartFactory.createBarChart(

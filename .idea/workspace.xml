@@ -6,12 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="fdb9b37f-5ce3-4600-9b47-20307e43de96" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jcommon_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_1.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/seguimiento2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/punto1/timSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Menu/Arreglo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Menu/Graficas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Menu/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Metodos/BitonicSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Metodos/CombSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Metodos/GnomeSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Metodos/HeapSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Metodos/PigeOnholeSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Metodos/TimSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Metodos/TreeSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Radix/RadixSort1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Radix/RadixSortClassroom.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +42,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2fSonaHe3lXCjSJSYIEWw4WIX5P" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -41,60 +55,105 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ALL/Codigos/WS_Java/Analisis_Algoritmos/EjerciciosPractica",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.GnomeSort">
-    <configuration name="BitonicSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BitonicSort" />
+  <component name="RunManager" selected="Application.Arreglo">
+    <configuration name="Arreglo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Menu.Arreglo" />
       <module name="seguimiento2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BitonicSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Metodos.BitonicSort" />
+      <module name="seguimiento2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="GnomeSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GnomeSort" />
+      <option name="MAIN_CLASS_NAME" value="Metodos.GnomeSort" />
       <module name="seguimiento2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HeapSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HeapSort" />
+    <configuration name="Graficas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Menu.Graficas" />
       <module name="seguimiento2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PigeOnHoleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PigeOnHoleSort" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Menu.Main" />
       <module name="seguimiento2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TreeSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TreeSort" />
-      <module name="seguimiento2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Arreglo" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Graficas" />
         <item itemvalue="Application.GnomeSort" />
         <item itemvalue="Application.BitonicSort" />
-        <item itemvalue="Application.HeapSort" />
-        <item itemvalue="Application.PigeOnHoleSort" />
-        <item itemvalue="Application.TreeSort" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -104,7 +163,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713804008364</updated>
-      <workItem from="1713804009373" duration="4901000" />
+      <workItem from="1713804009373" duration="14008000" />
+      <workItem from="1713818211500" duration="4000" />
+      <workItem from="1713818220013" duration="1032000" />
+      <workItem from="1713824624527" duration="2075000" />
+      <workItem from="1713834381276" duration="3313000" />
+      <workItem from="1713838091187" duration="3650000" />
+      <workItem from="1713841880381" duration="161000" />
+      <workItem from="1713842179014" duration="58000" />
+      <workItem from="1713842594166" duration="810000" />
+      <workItem from="1713843522477" duration="117000" />
+      <workItem from="1713843653458" duration="191000" />
+      <workItem from="1713844033635" duration="41000" />
+      <workItem from="1713844305352" duration="939000" />
+      <workItem from="1713845443258" duration="49000" />
+      <workItem from="1713846932862" duration="29000" />
+      <workItem from="1713973758895" duration="42000" />
+      <workItem from="1714448441148" duration="154000" />
     </task>
     <servers />
   </component>

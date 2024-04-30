@@ -1,4 +1,4 @@
-package punto1;
+package Metodos;
 
 public class BitonicSort {
 
@@ -63,38 +63,9 @@ public class BitonicSort {
      * @param N Longitud del arreglo
      * @param up Dirección de ordenamiento (1 para ASCENDENTE, 0 para DESCENDENTE)
      */
-    void sort(int a[], int N, int up) {
-        long startTime = System.nanoTime(); // Tiempo de inicio en nanosegundos
+    public void sort(int a[], int N, int up) {
         bitonicSort(a, 0, N, up);
-        long endTime = System.nanoTime(); // Tiempo de finalización en nanosegundos
-        long duration = endTime - startTime; // Duración en nanosegundos
-        System.out.println("Tiempo de ejecución de punto1.BitonicSort: " + duration + " nanosegundos");
-    }
-
-    /**
-     * Este método imprime el contenido de un arreglo.
-     * @param arr Arreglo de enteros a imprimir
-     */
-    static void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-
-    // Método principal
-    public static void main(String args[]) {
-        // El algoritmo debe recibir una potencia de 2 para que funcione adecuadamente
-        int a[] = {12345678, 80764578, 18076577, 87657878};
-        int up = 1;
-
-        System.out.println("El arreglo original es:");
-        printArray(a);
-
-        BitonicSort ob = new BitonicSort();
-        ob.sort(a, a.length, up);
-
-        System.out.println("Arreglo ordenado:");
-        printArray(a);
     }
 }
+
+

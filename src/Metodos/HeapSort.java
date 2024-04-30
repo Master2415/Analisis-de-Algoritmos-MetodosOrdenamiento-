@@ -1,3 +1,5 @@
+package Metodos;
+
 public class HeapSort {
 
     /**
@@ -52,39 +54,5 @@ public class HeapSort {
             heapify(arr, N, largest);
         }
     }
-
-    /**
-     * Este método imprime el contenido de un arreglo.
-     * @param arr Arreglo de enteros a imprimir
-     */
-    static void printArray(int arr[]) {
-        int N = arr.length;
-
-        for (int i = 0; i < N; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-
-    // Código de prueba
-    public static void main(String args[]) {
-        int arr[] = {12345678, 80764578, 18076577, 87657878, 78330487};
-        int N = arr.length;
-
-        System.out.println("El arreglo original es: ");
-        printArray(arr);
-
-        // Medir el tiempo de ejecución de HeapSort
-        long startTime = System.nanoTime(); // Tiempo de inicio en nanosegundos
-
-        // Llamar al método de ordenamiento
-        HeapSort ob = new HeapSort();
-        ob.sort(arr);
-
-        long endTime = System.nanoTime(); // Tiempo de finalización en nanosegundos
-        long duration = endTime - startTime; // Duración en nanosegundos
-        System.out.println("Tiempo de ejecución de HeapSort: " + duration + " nanosegundos");
-
-        System.out.println("El arreglo ordenado es:");
-        printArray(arr);
-    }
 }
+
